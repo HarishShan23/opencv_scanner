@@ -64,6 +64,7 @@ def start_scanner(path):
     OUTPUT_DIR_COLOR = 'output_color'
     OUTPUT_DIR_BW = 'output_bw'
 
+    # np.array to compare with returned contour
     not_detected = np.array([[(0, 0)], [(0, 0)], [(0, 0)], [(0, 0)]])
 
     image = cv.imread(path)
@@ -77,6 +78,7 @@ def start_scanner(path):
 
     comparison = detected_contour == not_detected
 
+    # If no contour is detected, then write input images directly
     if comparison.all():
         print(filename + ": No Contour detected. Returning original Image.")
         utils.write_images(image, OUTPUT_DIR_COLOR, OUTPUT_DIR_BW, filename)

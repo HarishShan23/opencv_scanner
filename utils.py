@@ -68,11 +68,13 @@ def perspective_transform(image, points):
     (tl, tr, br, bl) = rect
 
 	# Calculate width of new image
+	# Distance formula = sqrt((x2-x1)^2 + (y2-y2)^2)
     width_top = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
     width_bottom = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
     new_width = max(int(width_top), int(width_bottom))
 
 	# Calculate height of new image
+	# Distance formula = sqrt((x2-x1)^2 + (y2-y2)^2)
     height_left = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
     height_right = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
     new_height = max(int(height_left), int(height_right))
@@ -80,7 +82,7 @@ def perspective_transform(image, points):
 	# Extreme points of new image
     new_points = np.array([[0, 0], [new_width-1, 0], [new_width-1, new_height-1], [0, new_height-1]], dtype="float32")
 
-	# Find perspective matrix with new points
+	# Find perspective matrix from four pairs of corresponding points
     perspective_matrix = cv.getPerspectiveTransform(rect, new_points)
     
 	# Apply perspective transform to get warped image
@@ -96,6 +98,8 @@ def write_images(image, OUTPUT_DIR_COLOR, OUTPUT_DIR_BW, filename):
 
 	grayImg = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
 
+	# Gaussian Blue is done to reduce noise, but it also removes image details
+	# Blurred image is added with original image to get better text quality with less noise
 	image = cv.GaussianBlur(grayImg, (0,0), 3)
 	image = cv.addWeighted(grayImg, 1.5, image, -0.5, 0)
 
