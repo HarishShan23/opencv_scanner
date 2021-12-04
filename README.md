@@ -52,7 +52,7 @@ To run the program, use:
 ```
 python3 scanner.py
 ```
-The output files are stores in the two folders *ouput_bw* and *output_color*.
+The output files are stored in the two folders *ouput_bw* and *output_color*.
 
 ## Other Methods
 
@@ -66,10 +66,19 @@ The main objective is to separate the page to be scanned from the background. k-
 
 1. If there is a very low contrast difference between the background and the foreground (white page on white table), Canny Edge Detection fails to detect well defined edges and Contour Detection will fail. 
 
-2. The program detects the largest well defined edge from the image. 
+2. The program detects the largest well defined edge from the image. This can lead to the wrong object being detected if there are multiple rectangle with high contrast.  
+
+   
+| Source Image  | Scanned Image |
+| ------------- | ------------- |
+| <img src="/input/multiple.jpg" width="281.25" height="375"> | <img src="/output_color/multiple.jpg" width="281.25" height="375"> |
+   
 
 3. Overlapping pages are detected as a single page.  
 
+| Source Image  | Scanned Image |
+| ------------- | ------------- |
+| <img src="/input/overlapped.jpg" width="500" height="375"> | <img src="/output_bw/overlapped.jpg" width="500" height="375"> |
 
 ## Team Members
 
