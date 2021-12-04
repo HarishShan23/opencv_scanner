@@ -32,8 +32,9 @@ def find_contour(image):
     detected_contours = []
 
     for contour in contours:
+        eps = 0.1
         peri = cv.arcLength(contour, True)
-        approx = cv.approxPolyDP(contour, 0.1 * peri, True)
+        approx = cv.approxPolyDP(contour, eps * peri, True)
 
         if len(approx) == 4 and utils.check_contour(approx, IMAGE_WIDTH, IMAGE_HEIGHT):
             # Show detected contour
