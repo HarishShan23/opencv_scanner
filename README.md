@@ -87,4 +87,5 @@ Group - 2:
 - Harish Shanmugam - CED19I032 
 - Sam Prabhu - COE19B057
 
+Github: https://github.com/HarishShan23/opencv_scanner
 
