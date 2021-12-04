@@ -71,14 +71,14 @@ The main objective is to separate the page to be scanned from the background. k-
    
 | Source Image  | Scanned Image |
 | ------------- | ------------- |
-| <img src="/input/multiple.jpg" width="281.25" height="375"> | <img src="/output_color/multiple.jpg" width="281.25" height="375"> |
+| <img src="https://github.com/HarishShan23/opencv_scanner/blob/main/input/multiple.jpg" width="281.25" height="375"> | <img src="https://github.com/HarishShan23/opencv_scanner/blob/main/output_color/multiple.jpg" width="281.25" height="375"> |
    
 
 3. Overlapping pages are detected as a single page.  
 
 | Source Image  | Scanned Image |
 | ------------- | ------------- |
-| <img src="/input/overlapped.jpg" width="500" height="375"> | <img src="/output_bw/overlapped.jpg" width="500" height="375"> |
+| <img src="https://github.com/HarishShan23/opencv_scanner/blob/main/input/overlapped.jpg" width="500" height="375"> | <img src="https://github.com/HarishShan23/opencv_scanner/blob/main/output_bw/overlapped.jpg" width="500" height="375"> |
 
 ## Team Members
 
@@ -86,6 +86,4 @@ Group - 2:
 - Rohin Menon - COE19B010
 - Harish Shanmugam - CED19I032 
 - Sam Prabhu - COE19B057
-
-Github: https://github.com/HarishShan23/opencv_scanner
 
